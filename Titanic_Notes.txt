@@ -1,0 +1,69 @@
+Titanic Notes
+
+
+to use random forests, try running a pairs plot first to see how the classes are distributed across the different variables.  use that to run a classification model to train the data
+
+run models using all the variables, then remove a variable to see if the classification is better.  if it is worse, it is likely the variable is important for classification
+
+look at permutations of pairs of variables to train a classification model
+
+look at professor's randomForests.r script for finding outliers
+
+
+1) Take a random sample of the training data
+2) Plot the data to see where the survived and non survived fall (will need to convert categorical variables to numeric variables
+
+Look at partialPlot function in random forest to see if it will be helpful to figure out the classification
+
+review recursive partitioning in prof lecture
+
+
+Training set 
+
+Age, embarked, and cabin have missing values
+pClass - first class, second class, third class
+embarked - place the passenger embarked from: Cherbourg, Queenstown, or Southampton
+
+Test Set - Age, fare, cabin have missing values
+
+VARIABLE DESCRIPTIONS:
+survival        Survival
+                (0 = No; 1 = Yes)
+pclass          Passenger Class
+                (1 = 1st; 2 = 2nd; 3 = 3rd)
+name            Name
+sex             Sex
+age             Age
+sibsp           Number of Siblings/Spouses Aboard
+parch           Number of Parents/Children Aboard
+ticket          Ticket Number
+fare            Passenger Fare
+cabin           Cabin
+embarked        Port of Embarkation
+                (C = Cherbourg; Q = Queenstown; S = Southampton)
+
+SPECIAL NOTES:
+Pclass is a proxy for socio-economic status (SES)
+ 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
+
+Age is in Years; Fractional if Age less than One (1)
+ If the Age is Estimated, it is in the form xx.5
+
+With respect to the family relation variables (i.e. sibsp and parch)
+some relations were ignored.  The following are the definitions used
+for sibsp and parch.
+
+Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
+Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
+Parent:   Mother or Father of Passenger Aboard Titanic
+Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
+
+Other family relatives excluded from this study include cousins,
+nephews/nieces, aunts/uncles, and in-laws.  Some children travelled
+only with a nanny, therefore parch=0 for them.  As well, some
+travelled with very close friends or neighbors in a village, however,
+the definitions do not support such relations.
+
+
+It appears that some people booked multiple cabins (separated by space)
+
